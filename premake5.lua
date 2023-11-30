@@ -70,11 +70,11 @@ project "Fodo"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "FD_DEBUG"
+		defines "FD_RELEASE"
 		optimize "On"
 	
 	filter "configurations:Dist"
-		defines "FD_DEBUG"
+		defines "FD_DIST"
 		optimize "On"
 
 project "Sandbox"
@@ -118,9 +118,9 @@ project "Sandbox"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "FD_DEBUG"
+		defines "FD_RELEASE"
 		optimize "On"
 	
 	filter "configurations:Dist"
-		defines "FD_DEBUG"
+		defines "FD_DIST"
 		optimize "On"
