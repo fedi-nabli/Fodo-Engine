@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Fodo {
 
 	class FODO_API WindowResizeEvent : public Event

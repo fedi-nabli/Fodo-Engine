@@ -1,9 +1,7 @@
 #pragma once
 
+#include "fdpch.h"
 #include "Fodo/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Fodo {
 

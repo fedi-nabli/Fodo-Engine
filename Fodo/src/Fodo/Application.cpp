@@ -1,3 +1,4 @@
+#include "fdpch.h"
 #include "Application.h"
 
 #include "Fodo/Events/ApplicationEvent.h"
