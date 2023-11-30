@@ -5,9 +5,12 @@
 #include "Fodo/Events/MouseEvent.h"
 #include "Fodo/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Fodo {
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -16,26 +19,11 @@ namespace Fodo {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			FD_TRACE(e);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			FD_WARN(e);
-		}
-
-		MouseScrolledEvent e2(20, 30);
-		if (e2.IsInCategory(EventCategoryApplication))
-		{
-			FD_TRACE(e2);
-		}
-		if (e2.IsInCategory(EventCategoryInput))
-		{
-			FD_TRACE(e2);
-		}
-
-		while (true);
 	}
 }

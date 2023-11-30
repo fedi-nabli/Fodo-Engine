@@ -12,6 +12,12 @@ workspace "Fodo"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relatives to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Fodo/vendor/GLFW/include"
+
+include "Fodo/vendor/GLFW"
+
 project "Fodo"
 	location "Fodo"
 	kind "SharedLib"
@@ -33,7 +39,14 @@ project "Fodo"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
