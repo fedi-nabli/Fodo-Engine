@@ -5,6 +5,7 @@
 #include "spdlog/fmt/ostr.h"
 
 namespace Fodo {
+
 	class FODO_API Log
 	{
 	public:
@@ -16,6 +17,7 @@ namespace Fodo {
 		static std::shared_ptr<spdlog::logger> s_CoreLogger;
 		static std::shared_ptr<spdlog::logger> s_ClientLogger;
 	};
+
 }
 
 // Core Log macros

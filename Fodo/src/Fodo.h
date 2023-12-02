@@ -3,6 +3,7 @@
 // For use by Fodo Applications
 
 #include "Fodo/Application.h"
+#include "Fodo/Layer.h"
 #include "Fodo/Log.h"
 
 // ---Entry Point---------------------
