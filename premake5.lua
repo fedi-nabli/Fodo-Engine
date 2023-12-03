@@ -1,5 +1,6 @@
 workspace "Fodo"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -7,8 +8,6 @@ workspace "Fodo"
 		"Release",
 		"Dist"
 	}
-
-	startproject "Sandbox"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -27,6 +26,7 @@ project "Fodo"
 	kind "SharedLib"
 	language "C++"
 	toolset "v142"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -59,7 +59,6 @@ project "Fodo"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -71,22 +70,22 @@ project "Fodo"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "FD_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "FD_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 	
 	filter "configurations:Dist"
 		defines "FD_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
@@ -94,6 +93,7 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	toolset "v142"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -117,7 +117,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -127,15 +126,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "FD_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "FD_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 	
 	filter "configurations:Dist"
 		defines "FD_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
