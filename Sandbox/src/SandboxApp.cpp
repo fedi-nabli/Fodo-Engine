@@ -10,7 +10,7 @@ public:
 
 	void OnUpdate() override
 	{
-		FD_INFO("ExampleLaye::Update");
+		FD_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Fodo::Event& event) override
