@@ -6,6 +6,10 @@
 #include "Fodo/Layer.h"
 #include "Fodo/Log.h"
 
+#include "Fodo/Input.h"
+#include "Fodo/KeyCodes.h"
+#include "Fodo/MouseButtonCodes.h"
+
 #include "Fodo/ImGui/ImGuiLayer.h"
 
 // ---Entry Point---------------------

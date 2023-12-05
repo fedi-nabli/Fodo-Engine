@@ -1,7 +1,6 @@
 #include "fdpch.h"
 #include "Application.h"
 
-#include "Fodo/Input.h"
 #include <glad/glad.h>
 
 namespace Fodo {
@@ -57,9 +56,6 @@ namespace Fodo {
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
-
-			auto [x, y] = Input::GetMousePosition();
-			FD_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
