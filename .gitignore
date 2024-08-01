@@ -3,7 +3,7 @@
 bin-int/
 Intermediates/
 
-# Hazel files
+# Fodo files
 *.log
 
 # Visual Studio files and folder
@@ -15,6 +15,6 @@ Intermediates/
 **.csproj
 
 # Directories
-Hazel/vendor/VulkanSDK
+Fodo/vendor/VulkanSDK
 Hazelnut/assets/cache
 scripts/__pycache__
