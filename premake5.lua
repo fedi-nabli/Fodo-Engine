@@ -20,6 +20,9 @@ project "Fodo"
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
   objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+  pchheader "fdpch.h"
+  pchsource "Fodo/src/fdpch.cpp"
+
   files
   {
     "%{prj.name}/src/**.h",

@@ -1,9 +1,8 @@
 #pragma once
 
-#include "Fodo/Core.h"
+#include "fdpch.h"
 
-#include <string>
-#include <functional>
+#include "Fodo/Core.h"
 
 namespace Fodo {
 	// Events in Fodo are currently blockiong, meaning when an event occurs it

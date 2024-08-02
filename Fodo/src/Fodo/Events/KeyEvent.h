@@ -2,8 +2,6 @@
 
 #include "Fodo/Events/Event.h"
 
-#include <sstream>
-
 namespace Fodo {
 	class FODO_API KeyEvent : public Event
 	{

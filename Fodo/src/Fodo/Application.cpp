@@ -1,3 +1,5 @@
+#include "fdpch.h"
+
 #include "Application.h"
 
 #include "Fodo/Log.h"
