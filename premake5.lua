@@ -28,6 +28,7 @@ project "Fodo"
 
   includedirs
   {
+    "%{prj.name}/src",
     "%{prj.name}/vendor/spdlog/include"
   }
 

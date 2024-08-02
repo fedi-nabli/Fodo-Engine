@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Core.h"
+#include "Fodo/Core.h"
+#include "Fodo/Events/Event.h"
 
 namespace Fodo {
 	class FODO_API Application
