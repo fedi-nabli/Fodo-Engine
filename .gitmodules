@@ -1,3 +1,6 @@
 [submodule "Fodo/vendor/spdlog"]
 	path = Fodo/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Fodo/vendor/GLFW"]
+	path = Fodo/vendor/GLFW
+	url = https://github.com/fedi-nabli/glfw.git
