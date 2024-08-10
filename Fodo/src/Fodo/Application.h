@@ -2,6 +2,7 @@
 
 #include "Fodo/Core.h"
 #include "Fodo/Window.h"
+#include "Fodo/LayerStack.h"
 #include "Fodo/Events/Event.h"
 #include "Fodo/Events/ApplicationEvent.h"
 
@@ -14,6 +15,9 @@ namespace Fodo {
 
 		void Run();
 
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
+
 		void OnEvent(Event& e);
 
 	private:
@@ -21,6 +25,7 @@ namespace Fodo {
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 	};
 
 	// To be defined in CLIENT

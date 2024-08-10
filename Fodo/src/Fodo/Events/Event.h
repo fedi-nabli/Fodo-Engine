@@ -37,7 +37,8 @@ namespace Fodo {
 
 	class FODO_API Event
 	{
-		friend class EventDispatcher;
+	public:
+		bool Handled = false;
 
 	public:
 		virtual EventType GetEventType() const = 0;
@@ -49,9 +50,6 @@ namespace Fodo {
 		{
 			return GetCategoryFlags() & category;
 		}
-
-	protected:
-		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -70,7 +68,7 @@ namespace Fodo {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 
