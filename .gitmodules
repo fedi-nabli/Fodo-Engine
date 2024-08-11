@@ -4,3 +4,6 @@
 [submodule "Fodo/vendor/GLFW"]
 	path = Fodo/vendor/GLFW
 	url = https://github.com/fedi-nabli/glfw.git
+[submodule "FOdo/vendor/imgui"]
+	path = FOdo/vendor/imgui
+	url = https://github.com/TheCherno/imgui.git
