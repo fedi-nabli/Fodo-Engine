@@ -10,6 +10,10 @@
 	#error Fodo Engine only support Windows!
 #endif
 
+#ifdef FD_DEBUG
+	#define FD_ENABLE_ASSERTS
+#endif
+
 #ifdef FD_ENABLE_ASSERTS
 	#define FD_ASSERT(x, ...) { if (!(x)) { FD_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define FD_CORE_ASSERT(x, ...) { if (!(x)) { FD_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
