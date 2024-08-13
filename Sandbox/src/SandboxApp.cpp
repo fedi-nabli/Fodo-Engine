@@ -10,12 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		FD_INFO("ExampleLayer::Update");
+		if (Fodo::Input::IsKeyPressed(FD_KEY_TAB))
+			FD_TRACE("Tab key is pressed (poll)!");
 	}
 
 	void OnEvent(Fodo::Event& event) override
 	{
-		FD_TRACE("{0}", event);
+		if (event.GetEventType() == Fodo::EventType::KeyPressed)
+		{
+			Fodo::KeyPressedEvent& e = (Fodo::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == FD_KEY_TAB)
+				FD_TRACE("Tab is pressed (event)!");
+			FD_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 
