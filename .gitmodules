@@ -7,3 +7,6 @@
 [submodule "Fodo/vendor/imgui"]
 	path = Fodo/vendor/imgui
 	url = https://github.com/TheCherno/imgui.git
+[submodule "Fodo/vendor/glm"]
+	path = Fodo/vendor/glm
+	url = https://github.com/g-truc/glm.git

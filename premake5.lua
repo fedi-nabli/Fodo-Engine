@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Fodo/vendor/GLFW/include"
 IncludeDir["Glad"] = "Fodo/vendor/Glad/include"
 IncludeDir["ImGui"] = "Fodo/vendor/imgui"
+IncludeDir["glm"] = "Fodo/vendor/glm"
 
 group "Dependecies"
   include "Fodo/vendor/GLFW"
@@ -39,7 +40,9 @@ project "Fodo"
   files
   {
     "%{prj.name}/src/**.h",
-    "%{prj.name}/src/**.cpp"
+    "%{prj.name}/src/**.cpp",
+    "%{prj.name}/vendor/glm/glm/**.hpp",
+    "%{prj.name}/vendor/glm/glm/**.inl"
   }
 
   includedirs
@@ -48,7 +51,8 @@ project "Fodo"
     "%{prj.name}/vendor/spdlog/include",
     "%{IncludeDir.GLFW}",
     "%{IncludeDir.Glad}",
-    "%{IncludeDir.ImGui}"
+    "%{IncludeDir.ImGui}",
+    "%{IncludeDir.glm}"
   }
 
   links
@@ -109,7 +113,8 @@ project "Sandbox"
   includedirs
   {
     "Fodo/vendor/spdlog/include",
-    "Fodo/src"
+    "Fodo/src",
+    "%{IncludeDir.glm}"
   }
 
   links
